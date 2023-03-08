@@ -1,0 +1,373 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{! add new link start }}
+    <link rel="icon" type="image/x-icon" href="{{asset 'images/logoTitle.jpg'}}">
+    <title>ASC</title>
+    <!-- Font
+  ================================================== -->
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
+    <link rel="stylesheet" href="{{asset 'css/font-awesome.min.css'}}" />
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/bootstrap.min.css'}}" />
+    <!-- SELECTBOX
+  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/fancySelect.css'}}" media="screen" />
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS
+  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/extralayers.css'}}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset 'rs-plugin/css/settings.css'}}" media="screen" />
+    <!-- SCROLL BAR MOBILE MENU
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/jquery.mCustomScrollbar.css'}}" />
+    <!-- OWL CAROUSEL
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/owl.carousel.css'}}" />
+    <!-- SCROLL BAR MOBILE MENU
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/jquery.mCustomScrollbar.css'}}" />
+    <!-- MAIN STYLE
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/style.css'}}" />
+    {{!--
+    <link rel="stylesheet" href="{{asset 'css/animate.css'}}" /> --}}
+    <!-- color scheme -->
+    <link rel="stylesheet" href="{{asset 'switcher/demo.css'}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset 'switcher/colors/blue.css'}}" type="text/css" id="colors" />
+    <!-- Favicons
+  ================================================== -->
+    {{!
+    <link rel="shortcut icon" href="favicon.png" /> }}
+</head>
+
+<body>
+    <div class="mobile-menu-first">
+        <div id="mobile-menu" style="background-color: white;" class="mobile-menu-light">
+            <div class="mCustomScrollbar light" data-mcs-theme="minimal-dark">
+                <!-- Mobile Menu -->
+                <ul>
+                    <li>
+                        {{#link href="/en/" }} <i class="icon-home"></i> Home {{/link}}
+                    </li>
+                    <li>
+                        <a href="/en/services">Services</a>
+                        <ul>
+                            {{#get "posts" filter="tag:services+tag:en"}}
+                            {{#foreach posts}}
+                            <li><a style="text-transform: uppercase;" href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                            {{/get}}
+                        </ul>
+                    </li>
+                    <li>
+                        {{#link href="/en/news"}} News{{/link}}
+                    </li>
+                    <li>
+                        {{#link href="/en/contact-us"}} Contact Us{{/link}}
+                    </li>
+                </ul>
+                {{!-- <div class="footer-mobile-menu fmm-v1">
+                    <ul class="social">
+                        <li class="facebook">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="twitter">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="google-plus">
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li class="youtube">
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+
+                    <ul class="address-footer-mobile">
+                        <li>
+                            <a href=""><span class="lnr lnr-map-marker"></span>
+                                8th floor, 379 Hudson St, New York, NY 10018</a>
+                        </li>
+                        <li>
+                            <a href="tel:18001236879 "><span class="lnr lnr-smartphone"></span>
+                                1-800-123-6879
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:contact@finance.com"><span class="lnr lnr-envelope"></span>
+                                contact@finance.com</a>
+                        </li>
+                    </ul>
+                </div> --}}
+            </div>
+            <!-- /#rmm   -->
+        </div>
+    </div>
+
+    <!-- End Mobile Menu -->
+    <div id="page">
+        <header id="sticked-menu" class="header header-v1">
+            <div class="container">
+                <div id="menu-text-en" class="logo">
+                    <div class="mm-toggle">
+                        <i class="fa fa-bars"></i><span class="mm-label">Menu</span>
+                    </div>
+                    <!-- End button mobile menu -->
+                    {{#link href="/en"}}<img src="{{@site.logo}}" class="img-responsive" style="width:50px"
+                        alt="Image" />
+                    {{/link}}
+                    <a class="lang-change" href="/">az</a>
+                </div>
+                <!-- End Logo -->
+                <nav id="navi-desktop-site-en" style="float:right" class="navi-desktop-site">
+                    <ul class="navi-level-1">
+                        <li class="has-sub">
+                            {{#link href="/en/"}} <i class="icon-home"></i> Home {{/link}}
+                        </li>
+                        <li class="has-sub">
+                            {{#link href="/en/services"}} Services<i class="fa fa-angle-down"></i>{{/link}}
+                            <ul class="navi-level-2">
+                                {{#get "posts" filter="tag:services+tag:en"}}
+                                {{#foreach posts}}
+                                <li><a style="text-transform: uppercase;" href="{{url}}">{{title}}</a></li>
+                                {{/foreach}}
+                                {{/get}}
+                            </ul>
+                        </li>
+
+                        <li class="has-sub">
+                            {{#link href="/en/news"}} News{{/link}}
+                        </li>
+
+                        <li class="has-sub">
+                            {{#link href="/en/contact-us"}} Contact Us{{/link}}
+                        </li>
+                        <li class="has-sub">
+                            <a class="lang-change" href="/">az</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Navi Desktop -->
+                {{!-- <div class="navi-right">
+                    <ul>
+                        <li>
+                            <span class="has-icon sm-icon"><span
+                                    class="lnr lnr-phone-handset icon-set-1 icon-xs"></span>
+                                <span class="sub-text-icon text-middle sub-text-middle">0112-826-2789</span></span>
+                        </li>
+                        <li>
+                            <a href="#" class="ot-btn btn-rounded btn-hightlight-color">Get A
+                                Quote</a>
+                        </li>
+                    </ul>
+                </div> --}}
+        </header>
+    </div>
+    </div>
+    <!-- END HEADER -->
+    {{!-- Start slider --}}
+    <div>
+        <div class="no-padding">
+            <div class="slider slider-dark-arrow slider-home-1">
+                <div style="display: contents;" class="fullwidthbanner-container container">
+                    <div style="height:900px !important;max-height:900px !important;" id="revolution-slider-home-1">
+                        <ul>
+                            <!-- SLIDE  -->
+                            {{#get "posts" filter="tag:news+tag:en" limit="all"}}
+                            {{#foreach posts }}
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" data-delay="4000">
+                                <!-- MAIN IMAGE -->
+                                <img src="{{asset 'images/Slider/1.jpg'}}" alt="slidebg1" data-bgfit="cover"
+                                    data-bgposition="center" data-bgrepeat="no-repeat" />
+                                <!-- LAYER NR. 1 -->
+                                {{!-- <div class="container tp-caption sfr stt h2-text" data-x="50" data-y="298"
+                                    data-speed="400" data-start="1000" data-easing="easeInOut">Great experience
+                                </div> --}}
+
+                                <!-- LAYER NR. 2 -->
+                                <div class="container tp-caption sfr stt h1-text" data-x="50" data-y="381"
+                                    data-speed="400" data-start="1400" data-easing="easeInOut">{{title}}
+                                </div>
+
+                                <!-- LAYER NR. 3 -->
+                                <div class="container tp-caption sfr stb h3-text" data-x="50" data-y="455"
+                                    data-speed="400" data-start="1700" data-easing="easeInOut" style="max-width: 565px">
+                                    {{excerpt}}
+                                </div>
+
+                                <!-- LAYER NR. 4 -->
+                                <div class="container tp-caption sfr stb group-btn-slider" data-x="50" data-y="700"
+                                    data-speed="400" data-start="1900" data-easing="easeInOut">
+                                    <a href="/en/news" class="ot-btn large-btn btn-rounded btn-main-color btn-1">Our
+                                        News</a>
+                                    {{!-- <a href="servicesList2.html"
+                                        class="ot-btn large-btn btn-rounded btn-sub-color btn-2">Quick Call
+                                        Back</a> --}}
+                                </div>
+                            </li>
+                            {{/foreach}}
+                            {{/get}}
+                            <!-- SLIDE  -->
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" data-delay="6000">
+                                <!-- MAIN IMAGE -->
+                                <img src="{{asset 'images/Slider/2.jpg'}}" alt="slidebg1" data-bgfit="cover"
+                                    data-bgposition="center" data-bgrepeat="no-repeat" />
+
+                                <!-- LAYER NR. 1 -->
+                                {{!-- <div class="tp-caption sfr stt h2-text" data-x="50" data-y="298" data-speed="400"
+                                    data-start="1000" data-easing="easeInOut">HELPING YOU TO
+                                </div> --}}
+
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption sfr stt h1-text" data-x="50" data-y="381" data-speed="400"
+                                    data-start="1400" data-easing="easeInOut">GROW YOUR BUSINESS
+                                </div>
+
+                                <!-- LAYER NR. 3 -->
+                                <div class="tp-caption sfr stb h3-text" data-x="50" data-y="455" data-speed="400"
+                                    data-start="1700" data-easing="easeInOut" style="max-width: 565px">
+                                    Comprehensive financial advice and financial services that are
+                                    tailored to meet your individual needs.
+                                </div>
+                                <!-- LAYER NR. 4 -->
+                                <div class="tp-caption sfr stb group-btn-slider" data-x="50" data-y="580"
+                                    data-speed="400" data-start="1900" data-easing="easeInOut">
+                                    <a href="servicesList.html"
+                                        class="ot-btn large-btn btn-rounded btn-main-color btn-1">Our Services</a>
+                                    {{!-- <a href="servicesList2.html"
+                                        class="ot-btn large-btn btn-rounded btn-sub-color btn-2">Quick Call
+                                        Back</a> --}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Revolution End -->
+
+        {{! add new link end}}
+        <div style="">
+            {{{body}}}
+        </div>
+        <footer class="bg-dark footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 footer-link">
+                        <p>Copyright © 2016 Designed by AuThemes. All rights reserved.</p>
+                        <ul>
+                            <li> {{#link href="/"}} Home {{/link}}</li>
+                            <li>{{#link href="/services"}} Services {{/link}}</li>
+                            <li>{{#link href="news"}}News{{/link}}</li>
+                            <li>{{#link href="/contact-us"}}Contact us {{/link}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End container -->
+
+            {{ghost_foot}}
+        </footer>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- SCRIPT start
+    ================================================== -->
+        <script src="{{asset 'js/vendor/jquery.min.js'}}"></script>
+        <script src="{{asset 'js/plugins/jpreLoader.js'}}"></script>
+        <script src="{{asset 'js/plugins/jquery.waypoints.min.js'}}"></script>
+        <script src="{{asset 'js/vendor/bootstrap.min.js'}}"></script>
+        <script src="{{asset 'js/plugins/easing.js'}}"></script>
+        <script src="{{asset 'js/plugins/jquery.mCustomScrollbar.concat.min.js'}}"></script>
+        <script src="{{asset 'js/plugins/fancySelect.js'}}"></script>
+        <script src="{{asset 'js/plugins/custom.js'}}"></script>
+        <!-- Switcher
+    ================================================== -->
+        {{!
+        <script src="switcher/demo.js"></script> }}
+        <!-- Counter Up
+    ================================================== -->
+
+        <script src="{{asset 'js/plugins/jquery.animateNumber.min.js'}}"></script>
+        <script src="{{asset 'js/plugins/custom-counterup.js'}}"></script>
+        <!-- Mobile Menu
+    ================================================== -->
+        <script src="{{asset 'js/plugins/jquery.mobile-menu.js'}}"></script>
+        <script src="{{asset 'js/plugins/sticky.min.js'}}"></script>
+        <!-- Revo Lib
+    ================================================== -->
+        <script type="text/javascript" src="{{asset 'rs-plugin/js/jquery.themepunch.plugins.min.js'}}"></script>
+        <script type="text/javascript" src="{{asset 'rs-plugin/js/jquery.themepunch.revolution.min.js'}}"></script>
+        <!-- Custom Revoslider -->
+        <script src="{{asset 'js/plugins/revoslider-custom.js'}}"></script>
+
+        <!-- Initializing the isotope
+    ================================================== -->
+        <script src="{{asset 'js/plugins/isotope.pkgd.min.js'}}"></script>
+        <script src="{{asset 'js/plugins/custom-isotope.js'}}"></script>
+        <!-- Initializing Owl Carousel
+    ================================================== -->
+        <script src="{{asset 'js/plugins/owl.carousel.js'}}"></script>
+        <script src="{{asset 'js/plugins/custom-owl.js'}}"></script>
+</body>
+<style>
+    * {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    li#services-url-en span {
+        padding: 0px !important;
+        padding: 6px 10px !important;
+    }
+
+    @media screen and (min-width:992px) {
+        div.logo a.lang-change {
+            display: none !important;
+        }
+    }
+
+    div.logo a.lang-change,
+    header#sticked-menu nav.navi-desktop-site>ul>li a.lang-change {
+        display: inline-block;
+        padding: 0px;
+        border: 1px solid gray;
+        padding: 2px 12px 3px 12px;
+        border-radius: 4px;
+        background-color: white;
+        margin-left: 15px;
+    }
+
+    div.logo a.lang-change:hover,
+    header#sticked-menu nav.navi-desktop-site>ul>li a.lang-change:hover {
+        border: 1px solid #00abc9;
+        color: #00abc9;
+        transition-property: all;
+        transition-duration: 400;
+        padding: 2px 12px 3px 12px;
+        border-radius: 4px;
+        background-color: white;
+    }
+
+
+    @media only screen and (max-width: 991px) {
+        .header-v5 .logo img {
+            display: inline-block;
+            float: left;
+            width: auto;
+        }
+    }
+</style>
+<script>
+    (function () {
+        let h = window.innerHeight;
+        document.getElementsByTagName("MAIN")[0].style.minHeight = (screen.availHeight - 200) + "px"
+    })()
+</script>
+
+</html>

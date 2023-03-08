@@ -1,0 +1,271 @@
+<html lang="{{@site.locale}}">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{! add new link start }}
+    <link rel="icon" type="image/x-icon" href="{{asset 'images/logoTitle.jpg'}}">
+    <title>ASC</title>
+
+    <!-- Font
+  ================================================== -->
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
+    <link rel="stylesheet" href="{{asset 'css/font-awesome.min.css'}}" />
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/bootstrap.min.css'}}" />
+    <!-- SELECTBOX
+  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/fancySelect.css'}}" media="screen" />
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS
+  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/extralayers.css'}}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset 'rs-plugin/css/settings.css'}}" media="screen" />
+    <!-- SCROLL BAR MOBILE MENU
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/jquery.mCustomScrollbar.css'}}" />
+    <!-- OWL CAROUSEL
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/owl.carousel.css'}}" />
+    <!-- SCROLL BAR MOBILE MENU
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/jquery.mCustomScrollbar.css'}}" />
+    <!-- MAIN STYLE
+  ================================================== -->
+    <link rel="stylesheet" href="{{asset 'css/style.css'}}" />
+    {{!--
+    <link rel="stylesheet" href="{{asset 'css/animate.css'}}" /> --}}
+    <!-- color scheme -->
+
+    <!-- Favicons
+  ================================================== -->
+    {{!
+    <link rel="shortcut icon" href="favicon.png" /> }}
+
+</head>
+
+<body>
+    <!-- Overlay Mobile Menu Click -->
+    <div class="mobile-menu-first">
+        <div id="mobile-menu-right" class="mobile-menu-dark">
+            <div class="mCustomScrollbar light " data-mcs-theme="minimal-dark">
+                <ul>
+                    <li>
+                        {{#link href="/"}} <i class="icon-home"></i> Ana Səhifə {{/link}}
+                    </li>
+                    <li>
+                        {{#link href="/services"}} Xidmətlər {{/link}}
+                        <ul>
+                            {{#get "posts" filter="tag:services+tag:az"}}
+                            {{#foreach posts}}
+                            <li><a style="text-transform: uppercase;" href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                            {{/get}}
+                        </ul>
+                    </li>
+                    <li>
+                        {{#link href="/news"}} Xəbərlər{{/link}}
+                    </li>
+                    <li>
+                        {{#link href="/contact-us"}} Əlaqə{{/link}}
+                    </li>
+                </ul>
+
+                <!-- End footer mobile menu -->
+            </div>
+        </div>
+        <!-- /#rmm   -->
+    </div>
+    <!-- End Mobile Menu -->
+
+    <!-- End Mobile Menu -->
+    <div id="page">
+        <div class="sticky-wrapper-private" style="height:108px">
+            <header id="sticked-menu-az" class="header header-v5 animated slideInDown stuck">
+                <div class="container">
+                    <div class="logo">
+                        <div class="mm-toggle visible-xs visible-sm">
+                            {{!-- <i class="fa-remove fa fa-bars"></i> --}}
+                            <i class="fa fa fa-bars"></i>
+                            <span class="mm-label">Menyu</span>
+                        </div>
+                        {{#link href="/"}}<img src="{{@site.logo}}" class="img-responsive" alt="Image" />
+                        {{/link}}
+                        <a class="lang-change" href="/en">en</a>
+                    </div>
+                    <nav style="float:right" class="navi-desktop-site">
+                        <ul class="navi-level-1">
+                            <li class="has-sub">
+                                {{#link href="/"}} <i class="icon-home"></i> Ana səhifə {{/link}}
+                            </li>
+                            <li class="has-sub">
+                                {{#link href="/services"}} Xidmətlər<i class="fa fa-angle-down"></i>{{/link}}
+                                <ul class="navi-level-2">
+                                    {{#get "posts" filter="tag:services+tag:az"}}
+                                    {{#foreach posts}}
+                                    <li><a style="text-transform: uppercase;" href="{{url}}">{{title}}</a></li>
+                                    {{/foreach}}
+                                    {{/get}}
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                {{#link href="/news"}} Xəbərlər{{/link}}
+                            </li>
+
+                            <li class="has-sub">
+                                {{#link href="/contact-us"}} Əlaqə{{/link}}
+                            </li>
+                            <li class="has-sub">
+                                <a class="lang-change" href="/en">en</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- End container -->
+            </header>
+        </div>
+        <!-- END HEADER -->
+    </div>
+    <!-- END HEADER -->
+
+    {{! add new link end}}
+    <div style="">
+        {{{body}}}
+    </div>
+    <footer class="bg-dark footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 footer-link">
+                    <p>Copyright © 2016 Designed by AuThemes. All rights reserved.</p>
+                    <ul>
+                        <li> {{#link href="/"}} Ana səhifə {{/link}}</li>
+                        <li>{{#link href="/services"}} Xidmətlər {{/link}}</li>
+                        <li>{{#link href="news"}}Xəbərlər{{/link}}</li>
+                        <li>{{#link href="/contact-us"}}Əlaqə {{/link}}</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End container -->
+        {{ghost_foot}}
+    </footer>
+    {{!
+    <script src="https://cdn.tailwindcss.com"></script> }}
+    <!-- SCRIPT start
+    ================================================== -->
+    <script src="{{asset 'js/vendor/jquery.min.js'}}"></script>
+    <script src="{{asset 'js/plugins/jpreLoader.js'}}"></script>
+    <script src="{{asset 'js/plugins/jquery.waypoints.min.js'}}"></script>
+    <script src="{{asset 'js/vendor/bootstrap.min.js'}}"></script>
+    <script src="{{asset 'js/plugins/easing.js'}}"></script>
+    <script src="{{asset 'js/plugins/jquery.mCustomScrollbar.concat.min.js'}}"></script>
+    <script src="{{asset 'js/plugins/fancySelect.js'}}"></script>
+    <script src="{{asset 'js/plugins/custom.js'}}"></script>
+    <!-- Switcher
+    ================================================== -->
+    {{!
+    <script src="switcher/demo.js"></script> }}
+    <!-- Counter Up
+    ================================================== -->
+
+    <script src="{{asset 'js/plugins/jquery.animateNumber.min.js'}}"></script>
+    <script src="{{asset 'js/plugins/custom-counterup.js'}}"></script>
+    <!-- Mobile Menu
+    ================================================== -->
+    <script src="{{asset 'js/plugins/jquery.mobile-menu.js'}}"></script>
+    <script src="{{asset 'js/plugins/sticky.min.js'}}"></script>
+    <!-- Revo Lib
+    ================================================== -->
+    <script type="text/javascript" src="{{asset 'rs-plugin/js/jquery.themepunch.plugins.min.js'}}"></script>
+    <script type="text/javascript" src="{{asset 'rs-plugin/js/jquery.themepunch.revolution.min.js'}}"></script>
+    <!-- Custom Revoslider -->
+    <script src="{{asset 'js/plugins/revoslider-custom.js'}}"></script>
+
+    <!-- Initializing the isotope
+    ================================================== -->
+    <script src="{{asset 'js/plugins/isotope.pkgd.min.js'}}"></script>
+    <script src="{{asset 'js/plugins/custom-isotope.js'}}"></script>
+    <!-- Initializing Owl Carousel
+    ================================================== -->
+    <script src="https://kit.fontawesome.com/e6ff07d411.js" crossorigin="anonymous"></script>
+    <script src="{{asset 'js/plugins/owl.carousel.js'}}"></script>
+    <script src="{{asset 'js/plugins/custom-owl.js'}}"></script>
+</body>
+<script>
+    (function () {
+        let h = window.innerHeight;
+        document.getElementsByTagName("MAIN")[0].style.minHeight = (screen.availHeight - 113) + "px"
+        $("#sticked-menu-az").css("height", "108px");
+        $("#sticked-menu-az").css("padding-top", "30px");
+        $(window).scroll(function () {
+            var sticked_menu_az_scroll_top = $(window).scrollTop()
+            if (sticked_menu_az_scroll_top > 140) {
+                $("#sticked-menu-az").css("height", "auto");
+            } else {
+                $("#sticked-menu-az").css("height", "108px");
+                $("#sticked-menu-az").css("padding-top", "30px");
+            }
+        })
+    })()
+</script>
+<style>
+    * {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    li#services-url-en span {
+        padding: 0px !important;
+        padding: 10px !important;
+    }
+
+    @media screen and (min-width:992px) {
+        div.logo a.lang-change {
+            display: none !important;
+        }
+    }
+
+    div.logo a.lang-change {
+        display: inline-block;
+        padding: 0px;
+        padding: 2px 12px 3px 12px;
+        border-radius: 4px;
+        background-color: white;
+        margin-left: 15px;
+    }
+
+    .header-v5.stuck .navi-desktop-site .navi-level-1 li a.lang-change {
+        display: inline-block;
+        padding: 0px;
+        border: 1px solid gray;
+        padding: 2px 12px 3px 12px;
+        border-radius: 4px;
+        background-color: white;
+        margin-left: 15px;
+    }
+
+    div.logo a.lang-change:hover,
+    .header-v5.stuck .navi-desktop-site .navi-level-1 li a.lang-change:hover {
+        border: 1px solid #00abc9;
+        color: #00abc9;
+        transition-property: all;
+        transition-duration: 400;
+        padding: 2px 12px 3px 12px;
+        border-radius: 4px;
+        background-color: white;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .header-v5 .logo img {
+            display: inline-block;
+            float: left;
+            width: auto;
+        }
+    }
+</style>
+
+</html>

@@ -1,0 +1,130 @@
+{{!< layout-general}} {{#post}} <section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <div class="col-md-12">
+                    <h2>Şirkət xəbərləri</h2>
+                </div>
+            </div>
+        </div><!-- End Row -->
+    </div><!-- End container -->
+
+    </section><!--  End Section -->
+
+    <!-- Section BreadCrumb -->
+    <div class="no-padding border-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb breadcrumb-finance">
+                        <li>
+                            {{#link href='/'}}
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            Ana səhifə
+                            {{/link}}
+                        </li>
+                        <li class="active">Xəbərlər</li>
+                    </ol>
+                </div><!--  End col -->
+            </div>
+            <!-- End Row -->
+        </div><!-- End container -->
+    </div><!--  End Section -->
+
+    <div class="line"></div>
+
+    <!--Blog Detail -->
+    <section class="no-padding">
+        <div class="container">
+            <div class="row">
+                <div id="primary" class="content-area col-md-12 no-padding-right padding-bottom-70">
+                    <main id="main" class="padding-top-50">
+                        <h1>{{title}}</h1>
+                        <div class="latest-news-data">
+                            {{!-- <span class="tags"><a href="#">{{tags}}</a></span> --}}
+                            <span class="dates">{{date
+                                published_at
+                                format="MMMM DD, YYYY"
+                                }}</span>
+                        </div>
+                        <div class="lastest-news-detail">
+                            <img style="margin:25px 0;max-height:500px;min-width:100%" src="{{img_url feature_image}}"
+                                class="img-responsive" alt="Image" />
+                            <h4>{{excerpt}}</h4>
+                            <p>{{content}}</p>
+                            {{! <br /> }}
+                            {{! <p>Nulla fermentum eros vitae est finibus dapibus. Aliquam porta
+                                nulla a elit varius efficitur. In in magna sed turpis venenatis
+                                tristique eu eget neque. Duis condimentum libero ornare quam
+                                tincidunt interdum. Phasellus porttitor nisi ut lectus
+                                pellentesque, ut fringilla leo convallis.
+                            </p>
+                            <br />
+                            <blockquote>
+                                <p>Wullam placerat vehicula pulvinar. Nam convallis euismod
+                                    maximus. Suspendisse dignissim, ante at posuere cursus, diam
+                                    nisl viverra felis, vel malesuada ex ante ac urna.</p>
+                                <strong>CHERYL CRUZ</strong>
+                            </blockquote>
+                            <br />
+                            <p>Duis gravida tempus imperdiet. Vivamus elit vel consequat
+                                elementum. Cras consequat lorem non orci sagittis, eget volutpat
+                                neque imperdiet. Nam auctor nisi vitae enim accumsan, ac
+                                dignissim tortor consequat.</p>
+                            <ul class="style-list-circle">
+                                <li><a href="#">Nullam consequat lacus non luctus finibus.</a></li>
+                                <li><a href="#">Interdum et malesuada fames ac ante</a></li>
+                                <li><a href="#">Nam justo ipsum, sagittis sed hendrerit ac</a></li>
+                                <li><a href="#">Interdum et malesuada fames ac ante</a></li>
+                                <li><a href="#">Nam justo ipsum, sagittis sed hendrerit ac</a></li>
+                            </ul> }}
+                        </div>
+
+                    </main>
+                </div>
+                <!-- End Col -->
+
+            </div><!-- End Row -->
+
+        </div><!-- End container -->
+    </section><!--  End Section -->
+
+    {{/post}}
+    <script>
+        addEventListener("load", (event) => {
+            let h = window.innerHeight;
+            document.getElementById("primary").style.minHeight = (screen.availHeight - 200) + "px";
+
+            $("#sticked-menu-az").css("height", "108px");
+            $("#sticked-menu-az").css("padding-top", "30px");
+            $(window).scroll(function () {
+                var sticked_menu_az_scroll_top = $(window).scrollTop()
+                if (sticked_menu_az_scroll_top > 140) {
+                    $("#sticked-menu-az").css("height", "auto");
+                } else {
+                    $("#sticked-menu-az").css("height", "108px");
+                    $("#sticked-menu-az").css("padding-top", "30px");
+                }
+            })
+        })
+    </script>
+    <style>
+        header#sticked-menu nav.navi-desktop-site>ul>li a#lang-change-az {
+            display: inline-block;
+            padding: 0px;
+            border: 1px solid gray;
+            padding: 2px 12px 3px 12px;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        header#sticked-menu nav.navi-desktop-site>ul>li a#lang-change-az:hover {
+            border: 1px solid #00abc9;
+            color: #00abc9;
+            transition-property: all;
+            transition-duration: 400;
+            padding: 2px 12px 3px 12px;
+            border-radius: 4px;
+            background-color: white;
+        }
+    </style>

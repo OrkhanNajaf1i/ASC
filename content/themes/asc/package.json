@@ -1,0 +1,51 @@
+{
+  "name": "fianance",
+  "description": "This is Finance page",
+  "version": "5.4.5",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "author": {
+    "email": "orkhannajaf1i0@gmail.com",
+    "name": "Orkhan"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "config": {
+    "posts_per_page":3,
+    "custom": {
+      "navigation_layout": {
+          "type": "select",
+          "options": [
+              "Logo on cover",
+              "Logo in the middle",
+              "Stacked"
+          ],
+          "default": "Logo on cover"
+      }
+    },
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
+    "card_assets": true
+  }
+}

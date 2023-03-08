@@ -1,0 +1,134 @@
+{{!< layout-home-en}} <main role="main" class="{{body_class}}">
+    <section class="padding-top-50">
+        <div class="container">
+            <div class="row">
+                <div class="services-wrap">
+                    <div class="services-list-contain">
+                        {{#get "posts" limit="all" filter="tag:services+tag:en"}}
+                        {{#foreach posts}}
+                        <div class="item-services">
+                            <div class="thumbnail">
+                                <a href="{{url}}" class="services-3-column-img-container">
+                                    <img src="{{img_url feature_image}}" alt="" />
+                                    <h4>{{title}}</h4>
+                                </a>
+                                <div class="caption">
+                                    <p>
+                                        {{excerpt}}
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="learn-more" href="{{url}}"><i class="fa fa-caret-right" aria-hidden="true"></i>
+                                Daha ətraflı
+                            </a>
+                        </div>
+                        {{/foreach}}
+                        {{/get}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-grey" style="margin-bottom: 85px;">
+        <div class="container">
+            {{#get "posts" filter="tag:facilities+tag:en"}}
+            {{#foreach posts}}
+            <div class="row">
+                <div class="three-column-text">
+                    <div class="col-md-12">
+                        <h2 style="padding-left:0" class="title">{{title}}</h2>
+                        <div class="make-easy-item">
+                            {{content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/foreach}}
+            {{/get}}
+            <!-- End row -->
+        </div>
+        <!-- End Container -->
+    </section>
+    </main>
+    <style>
+        .services-wrap div.services-list-contain div.item-services {
+            width: auto;
+            min-width: auto;
+            max-width: auto;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media screen and (min-width:1536px) {
+            div.services-list-contain {
+                display: grid;
+                grid: auto / 469px 469px 469px;
+                gap: 45px;
+            }
+
+            div.item-services>div.thumbnail img,
+            div.item-services>div.thumbnail a {
+                height: 200px;
+                max-height: 200px;
+            }
+        }
+
+        @media screen and (min-width:1280px) and (max-width:1536px) {
+            div.services-list-contain {
+                display: grid;
+                grid: auto / 387px 387px 387px;
+                gap: 45px;
+            }
+
+            div.item-services>div.thumbnail img,
+            div.item-services>div.thumbnail a {
+                height: 200px;
+                max-height: 200px;
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1280px) {
+            div.services-list-contain {
+                display: grid;
+                grid: auto / 301px 301px 301px;
+                gap: 45px;
+            }
+        }
+
+        @media screen and (min-width:992px) and (max-width:1024px) {
+            div.services-list-contain {
+                display: grid;
+                grid: auto / auto auto;
+                gap: 45px;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            div.services-list-contain {
+                display: grid;
+                grid: auto / auto;
+                gap: 45px;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            div.services-list-contain {
+                display: grid;
+                grid: auto / auto;
+                gap: 45px;
+            }
+
+            .services-wrap div.services-list-contain div.item-services {
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    </style>

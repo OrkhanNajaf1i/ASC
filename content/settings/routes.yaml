@@ -1,0 +1,39 @@
+routes:
+  
+collections:
+  /services/:
+    permalink: /services/{slug}/
+    template: services
+    filter: "tag:services+tag:az"
+  /en/services/:
+    permalink: /en/services/{slug}/
+    template: services-en
+    filter: "tag:services+tag:en"
+  /news/:
+    permalink: /news/{slug}/
+    template: news
+    filter: "tag:news+tag:az"
+  /en/news/:
+    permalink: /en/news/{slug}/
+    template: news-en
+    filter: "tag:news+tag:en"
+  /contact-us/:
+    permalink: /contact-us/{slug}/
+    template: contact-us
+    filter: "tag:contact-us+tag:az"
+  /en/contact-us/:
+    permalink: /en/contact-us/{slug}/
+    template: contact-us-en
+    filter: "tag:contact-us+tag:en"
+  /:
+    permalink: /{slug}/
+    template: index
+    # filter: "tag:services"
+  /en/:
+    permalink: /en/{slug}/
+    template: index-en
+    # filter: "tag:services"
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

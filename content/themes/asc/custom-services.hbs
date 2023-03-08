@@ -1,0 +1,156 @@
+{{!< layout-general}} {{#post}} <section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <div class="col-md-12">
+          <h2>Bizim xidmətlər</h2>
+          {{#match locale "az"}} <span>Goster az</span> {{/match}}
+        </div>
+      </div>
+    </div>
+    <!-- End Row -->
+  </div>
+  <!-- End container -->
+  </section>
+  <!--  End Section -->
+
+  <!-- Section BreadCrumb -->
+  <div class="no-padding border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb breadcrumb-finance">
+            <li>
+              {{#link href='/'}}
+              <i class="fa fa-home" aria-hidden="true"></i>
+              Ana səhifə
+              {{/link}}
+            </li>
+            <li class="active">Bizim xidmətlər</li>
+          </ol>
+        </div>
+        <!--  End col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End container -->
+  </div>
+  <div class="line"></div>
+  <section class="padding-top-50">
+    <div class="container">
+      <div class="row">
+        <!-- End col slidebar -->
+        <div class="col-12 services-detail-content">
+          <img src="{{img_url feature_image}}" class="img-responsive img-header-detail" alt="{{title}}" />
+
+          <div class="h-block">
+            <h3>{{title}}</h3>
+            {{!-- <div class="row"> --}}
+              <div id="service-post" class="col-12 col-md-10">
+                {{content}}
+              </div>
+              {{!--
+            </div> --}}
+            <!-- End row -->
+          </div>
+          <!-- End v-block -->
+        </div>
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End container -->
+  </section>
+  <!--Blog Detail -->
+
+  {{/post}}
+  <script async>
+    addEventListener("load", (event) => {
+      console.log("custom services.en")
+
+      $("#sticked-menu-az").css("height", "108px");
+      $("#sticked-menu-az").css("padding-top", "30px");
+      $(window).scroll(function () {
+        var sticked_menu_az_scroll_top = $(window).scrollTop()
+        if (sticked_menu_az_scroll_top > 140) {
+          $("#sticked-menu-az").css("height", "auto");
+        } else {
+          $("#sticked-menu-az").css("height", "108px");
+          $("#sticked-menu-az").css("padding-top", "30px");
+        }
+      })
+
+      let h = window.innerHeight;
+      document.getElementById("primary").style.minHeight = (screen.availHeight - 113) + "px";
+    })
+  </script>
+  <style>
+    div.services-detail-content {
+      padding: 0px;
+      padding: 0px 15px;
+    }
+
+    .services-detail-content .img-header-detail {
+      margin-bottom: 30px;
+      width: auto;
+      max-width: auto;
+    }
+
+    @media screen and (min-width:1300px) {
+      div.services-detail-content img {
+        max-height: 550px;
+        width: 700px;
+        min-width: 700px;
+      }
+    }
+
+    @media screen and (max-width:1300px) {
+      div.services-detail-content img {
+        max-height: 550px;
+        width: 800px;
+        min-width: 800px;
+      }
+    }
+
+    @media screen and (max-width:992px) {
+      div.services-detail-content img {
+        max-height: 550px;
+        width: auto;
+        min-width: auto;
+      }
+    }
+
+    div#service-post {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    div#service-post h3 {
+      margin: 0px;
+      padding: 0px;
+      margin: 50px 0px 10px 0;
+    }
+
+    div#service-post ol {
+      list-style-type: disc;
+      padding-inline-start: 17px;
+    }
+
+    header#sticked-menu nav.navi-desktop-site>ul>li a#lang-change-az {
+      display: inline-block;
+      padding: 0px;
+      border: 1px solid gray;
+      padding: 2px 12px 3px 12px;
+      border-radius: 4px;
+      background-color: white;
+    }
+
+    header#sticked-menu nav.navi-desktop-site>ul>li a#lang-change-az:hover {
+      border: 1px solid #00abc9;
+      color: #00abc9;
+      transition-property: all;
+      transition-duration: 400;
+      padding: 2px 12px 3px 12px;
+      border-radius: 4px;
+      background-color: white;
+    }
+  </style>
